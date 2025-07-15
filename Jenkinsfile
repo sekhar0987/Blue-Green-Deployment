@@ -68,13 +68,13 @@ pipeline {
         }
 
 
-        // stage('Deploy SVC app') {
-        //     steps {
-        //         withKubeConfig(credentialsId: 'venkat-kubect-config-creds') {
-        //             sh ' kubectl apply -f bankapp-service.yml'
-        //         }
-        //     }
-        // }
+        stage('Deploy SVC app') {
+            steps {
+                withKubeConfig(credentialsId: 'sekhar-kubect-config-creds') {
+                    sh ' kubectl apply -f bankapp-service.yml'
+                }
+            }
+        }
 
         // stage('Deploy to Kubernetes') {
         //     steps {
